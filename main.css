@@ -1,0 +1,324 @@
+/* General Styles for all pages */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    opacity: 0;  /* Hidden before load */
+    transition: opacity 1s ease-in;  /* Fade-in animation */
+}
+
+body.loaded {
+    opacity: 1;  /* Shown after load */
+}
+
+/* Navbar Styles */
+nav {
+    background-color: #333;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .logo {
+    color: white;
+    font-size: 1.5rem;
+}
+
+nav .nav-links {
+    list-style-type: none;
+    display: flex;
+}
+
+nav .nav-links li {
+    margin-left: 20px;
+}
+
+nav .nav-links li a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 12px;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Hover transition */
+}
+
+nav .nav-links li a:hover {
+    background-color: #f4b41a;
+    color: #333;
+    border-radius: 5px;
+}
+
+/* Welcome Section */
+#welcome {
+    height: 75vh;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transform: translateY(50px);  /* Start from below */
+    transition: opacity 1s ease, transform 1s ease;  /* Smooth transition */
+    margin-top: -50px;
+    
+}
+
+#welcome.loaded {
+    opacity: 1;  /* Fully visible after load */
+    transform: translateY(0);  /* Reset position */
+    
+}
+
+.welcome-container {
+    max-width: 800px;
+    padding: 20px;
+}
+
+.welcome-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#welcome h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+#welcome p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+/* Button Styles */
+.cta-btn {
+    margin-top: 20px;
+    padding: 10px 25px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.4s ease, color 0.4s ease, transform 0.3s ease;
+}
+
+.cta-btn:hover {
+    background-color: #f4b41a;
+    color: #333;
+    transform: scale(1.05);  /* Slight enlarge on hover */
+}
+
+/* Section Styles (Shared across pages) */
+section {
+    padding: 60px;
+}
+
+.about-container, .projects-container, .contact-container {
+    text-align: center;
+}
+/* Container for the hover button and hidden sections */
+.hover-button-container {
+    position: relative;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+/* Style for the main button */
+.cta-btn {
+    padding: 10px 25px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+.cta-btn:hover {
+    background-color: #f4b41a;
+    color: #333;
+    transform: scale(1.05);
+}
+
+/* Hidden sections that appear when hovering the button */
+.hidden-sections {
+    display: none;
+    position: absolute;
+    top: 50px;  /* Position just below the button */
+    left: 0;
+    background-color: #fff;
+    padding: 10px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    width: 200px;
+}
+
+/* Style for each link inside the hidden sections */
+.hidden-sections a {
+    display: block;
+    padding: 10px;
+    color: #333;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.hidden-sections a:hover {
+    background-color: #f4b41a;
+    color: white;
+}
+
+/* Show hidden sections when hovering over the button container */
+.hover-button-container:hover .hidden-sections {
+    display: block;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Simple fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* About Me Section */
+#about-me {
+    background-color: #f9f9f9;
+    padding: 60px;
+    text-align: center;
+}
+
+#about-me h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+#about-me p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.read-more-btn {
+    padding: 10px 25px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+.read-more-btn:hover {
+    background-color: #f4b41a;
+    color: #333;
+}
+
+/* Blog Section */
+#blog {
+    background-color: #fff;
+    padding: 60px;
+    text-align: center;
+}
+
+#blog h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.blog-container {
+    position: relative;
+    width: 100%; /* Full width of the blog section */
+    max-width: 100%; /* No constraint on max width */
+    overflow: hidden; /* Hide overflowing blogs */
+    display: flex;
+    justify-content: center;
+}
+
+/* Wrapper that will hold only 2 blogs visible at a time */
+.blog-slider-wrapper {
+    display: flex;
+    width: 100%; 
+    overflow: hidden;
+    position: relative;
+}
+
+/* Slider that will move. Adjust width based on the number of blog items */
+.blog-slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: calc(50% * 4); /* For 4 blogs, adjust width accordingly */
+}
+
+/* Each blog item will take 50% of the visible area, meaning 2 blogs will be visible at a time */
+.blog-item {
+    flex: 0 0 50%; /* Each blog occupies 50% of the wrapper */
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    background-color: #f4f4f4;
+    padding: 20px;
+    margin-right: 34px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.blog-item img {
+    width: 100%;
+    height: 60%; /* The image takes up 60% of the blog item */
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.blog-text {
+    flex: 1;
+    text-align: left;
+}
+
+.blog-text h3 {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.blog-text p {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+/* Arrow Buttons */
+.arrow-btn {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.arrow-btn:hover {
+    background-color: #f4b41a;
+}
+
+.left-btn {
+    left: 10px;
+}
+
+.right-btn {
+    right: 10px;
+}
