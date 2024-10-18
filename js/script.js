@@ -29,7 +29,7 @@ function showSlide(index) {
 // Left Arrow Click Event
 document.querySelector('.left-btn').addEventListener('click', () => {
     if (currentSlide > 0) {
-        currentSlide--; // Move to the previous blog
+        currentSlide -= 1.1; // Move to the previous blog
     }
     showSlide(currentSlide);
 });
@@ -37,7 +37,7 @@ document.querySelector('.left-btn').addEventListener('click', () => {
 // Right Arrow Click Event
 document.querySelector('.right-btn').addEventListener('click', () => {
     if (currentSlide < totalBlogs - 2) { // Subtract 2 to ensure 2 blogs are visible
-        currentSlide++; // Move to the next blog
+        currentSlide += 1.1; // Move to the next blog
     }
     showSlide(currentSlide);
 });
