@@ -73,10 +73,10 @@ nav .nav-links li a:hover {
 }
 
 .welcome-img {
-    width: 400px;
-    
+    width: 26.2%;
     border-radius: 50%;
     margin-bottom: 20px;
+    margin-right: 6%;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -242,8 +242,8 @@ section {
 
 .blog-container {
     position: relative;
-    width: 96%; /* Full width of the blog section */
-    max-width: 100%; /* No constraint on max width */
+    width: 95%; /* Full width of the blog section */
+    max-width: 95%; /* No constraint on max width */
     overflow: hidden; /* Hide overflowing blogs */
     display: flex;
     justify-content: center;
@@ -274,7 +274,7 @@ section {
     padding: 20px;
     margin-right: 34px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
+    border-radius: 20px;
 }
 
 .blog-item img {
